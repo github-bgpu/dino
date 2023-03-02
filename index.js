@@ -8,9 +8,9 @@ let y = 1500;
 let dy = 0;
 
 setInterval(() => {
-    dy = dy + G * DT
+    dy = dy - G * DT
 
-    y = y - dy
+    y = y + dy
 
     if (y < 0) {
         y = 0
@@ -19,4 +19,12 @@ setInterval(() => {
     dino.style.bottom = `${y * 0.25}px`
 }, DT)
 
-dino.style.bottom = "100px";
+document.addEventListener("keydown", () => {
+    if (y === 0) {
+        dy = 15
+    }
+})
+
+document.addEventListener("keyup", () => {
+    dy = 0
+})
