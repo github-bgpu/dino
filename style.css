@@ -1,5 +1,6 @@
 .field {
   position: relative;
+  overflow: hidden;
 
   border: 1px solid black;
   height: 500px;
