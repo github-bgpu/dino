@@ -12,6 +12,11 @@ let x = 3500
 const dx = -10;
 
 setInterval(() => {
+    updateDino()
+    updateCactus()
+}, DT)
+
+function updateDino() {
     dy = dy - G * DT
     y = y + dy
 
@@ -20,7 +25,9 @@ setInterval(() => {
     }
 
     dino.style.bottom = `${y * 0.25}px`
+}
 
+function updateCactus() {
     x = x + dx
 
     if (x < -300) {
@@ -28,7 +35,7 @@ setInterval(() => {
     }
 
     cactus.style.left = `${x * 0.25}px`
-}, DT)
+}
 
 document.addEventListener("keydown", () => {
     if (y === 0) {
