@@ -1,9 +1,14 @@
 .field {
+  position: relative;
+
   border: 1px solid black;
   height: 500px;
 }
 
 .dino {
+  position: absolute;
+  bottom: 0px;
+
   background-position: 3.3% 0%;
   background-image: url(./spritesheet.png);
   width: 80px;
