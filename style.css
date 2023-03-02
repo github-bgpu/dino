@@ -4,6 +4,7 @@
 }
 
 .dino {
+  background-position: 3.3% 0%;
   background-image: url(./spritesheet.png);
   width: 80px;
   height: 100px;
