@@ -4,6 +4,9 @@ const DT = 1 / FPS;
 
 const dino = document.querySelector("#dino");
 const cactus = document.querySelector("#cactus");
+const score_el = document.querySelector("#score");
+
+let score = 0;
 
 let y = 1500;
 let dy = 0;
@@ -11,9 +14,13 @@ let dy = 0;
 let x = 3500
 const dx = -10;
 
+let hit = false
+
 setInterval(() => {
     updateDino()
     updateCactus()
+    updateScore()
+    checkCollision()
 }, DT)
 
 function updateDino() {
@@ -35,6 +42,21 @@ function updateCactus() {
     }
 
     cactus.style.left = `${x * 0.25}px`
+}
+
+function updateScore() {
+    score += Math.abs(dx * DT / 5)
+    score_el.innerHTML = Math.ceil(score)
+}
+
+function checkCollision() {
+    if (x < 40 && y < 100) {
+        hit = true
+    }
+
+    if (hit === true) {
+        alert("GAME OVER")
+    }
 }
 
 document.addEventListener("keydown", () => {
