@@ -3,6 +3,7 @@ services:
     image: nginx
     volumes:
      - ./templates:/etc/nginx/templates
+     - ./:/usr/share/nginx/html
     ports:
      - "8080:80"
     environment:
